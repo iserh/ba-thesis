@@ -1,0 +1,87 @@
+% !TeX program = lualatex 
+\documentclass[ba,logo]{mlai-thesis} 
+
+\input{preamble}
+\input{glossary}
+
+\title{Data Augmentation mit Variational Autoencodern} 
+\author{Paul Henri Iser\\\birthinfo{02. Oktober 1998 in Bonn, Deutschland}}
+
+\thesistype{Bachelorarbeit} 
+\examiner{
+  Dr. Pascal Welke\\Universität Bonn \and
+  Prof. Dr. Christian Bauckhage\\Universität Bonn
+}
+\supervisor{Florian Seiffarth\\Universität Bonn}
+
+\addbibresource{references.bib}
+
+\begin{document}	
+	\frontmatter
+	
+	\include{glossary}
+	
+	\maketitle 
+	\cleardoublepage
+	
+	% Abstract
+	\include{abstract}
+	\cleardoublepage
+	
+	% Authorship
+	%\chapter*{Statement of Authorship} 
+	%\input{authorship-en.tex} 
+	\chapter*{Eigenst\"{a}ndigkeitserkl\"{a}rung}
+	\input{authorship-de.tex}
+	\cleardoublepage
+	
+	% Table of contents
+	\tableofcontents
+	
+	\mainmatter
+	
+	% Introduction
+	\include{introduction}
+	
+	% Related Work
+	\include{related-work}
+	
+	% Literature
+	\include{literature}
+	
+	% Datasets
+	\include{datasets}
+	
+	% Methodology
+	\include{methodology}
+	
+	% Evaluation
+	\include{evaluation}
+	
+	% Conclusion
+	\include{conclusion}
+	
+	% Outlook
+	\include{outlook}
+	
+	% Workaround: 
+	% The backmatter deactivates chapter numbering for the appendices which are 
+	% supposed to appear in the backmatter _after_ the bibliography. This makes 
+	% referencing the appendices a hassle. A workaround is to put the
+	% backmatter, bibilography, and lists-of in a LaTeX group using \begingroup 
+	\begingroup 
+	
+	\backmatter
+		
+	\printbibliography[heading=bibintoc]
+	
+	\listoffigures
+	
+	\listoftables
+	
+	\endgroup 
+	% End of Workaround 
+	
+	\appendix	
+	
+\end{document}
