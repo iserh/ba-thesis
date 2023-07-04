@@ -7,7 +7,7 @@ Im anschließenden Kapitel wird die Güte des VAE basierten Data Augmentation An
 \begin{tabular}{l|l|l|l}
 \multicolumn{2}{l}{\multirow{2}{*}{}}                                                  & \multicolumn{2}{|c}{ground truth} \\ \cline{3-4}
 \multicolumn{2}{l|}{}                                                                   & True                              & False \\ \hline
-\rule{0pt}{25pt}\multirow{2}{*}{\rotatebox[origin=c]{90}{predicted}} & \rotatebox[origin=c]{90}{True}  & true-positive (tp) & false-positive (fp) \rule{0pt}{25pt} \\ \cline{2-4} 
+\rule{0pt}{25pt}\multirow{2}{*}{\rotatebox[origin=c]{90}{predicted}} & \rotatebox[origin=c]{90}{True}  & true-positive (tp) & false-positive (fp) \rule{0pt}{25pt} \\ \cline{2-4}
 \rule{0pt}{25pt} & \rotatebox[origin=c]{90}{False}   & false-negative (fn) & true-negative (tn) \rule{0pt}{25pt}
 \end{tabular}
 \caption{Üblicherweise beschreibt man in der Klassifikation die Beziehung zwischen Vorhersage eines Modells (\textit{predicted}) und der tatsächlichen Klasse (\textit{ground truth}) über eine Konfusionsmatrix. Basierend darauf ergeben sich mehrere Bewertungs Metriken.}
@@ -212,8 +212,8 @@ Abbildung \ref{plt:thyroid-few-shot} zeigt, dass die Verbesserung im F-Score mit
   height = 4cm,
   symbolic x coords={5,10,20,30,50,100},
   xtick={5,10,20,30,50,100},
-  xlabel={\# Beispiele pro Klasse}, 
-  ylabel={$\Delta$ F-Score}, 
+  xlabel={\# Beispiele pro Klasse},
+  ylabel={$\Delta$ F-Score},
   grid,
   legend pos=south west,
 ]
@@ -317,19 +317,19 @@ Da die erzielten Verbesserungen in der Modellgüte gering ausfallen, stellt sich
   height=5cm,
   symbolic x coords={2,3,4,5,10,20,30,50,100,200,500,1000,2000},
   xtick={2,3,4,5,10,20,30,50,100,200,500,1000,2000},
-  xlabel={Generierte Beispiele pro Klasse}, 
-  ylabel={F1 Score}, 
+  xlabel={Generierte Beispiele pro Klasse},
+  ylabel={F1 Score},
   grid,
   legend pos=south east,
 ]
 
-\addplot[blue, no marks, solid] table[col sep=comma, x=n_generated, y=baseline]{data/evaluation/MNIST-GEN*-5.csv};
+\addplot[blue, no marks, solid] table[col sep=comma, x=n_generated, y=baseline]{data/evaluation/MNIST-GEN-5.csv};
 \addlegendentry{Baseline}
 
-\addplot[red, no marks, solid] table[col sep=comma, x=n_generated, y=interpolation_noise]{data/evaluation/MNIST-GEN*-5.csv};
+\addplot[red, no marks, solid] table[col sep=comma, x=n_generated, y=interpolation_noise]{data/evaluation/MNIST-GEN-5.csv};
 \addlegendentry{Interpolation + Noise}
 
-\addplot[violet, no marks, solid] table[col sep=comma, x=n_generated, y=multi_vae]{data/evaluation/MNIST-GEN*-5.csv};
+\addplot[violet, no marks, solid] table[col sep=comma, x=n_generated, y=multi_vae]{data/evaluation/MNIST-GEN-5.csv};
 \addlegendentry{Multi-VAE}
 
 \end{axis}
@@ -412,7 +412,7 @@ In den durchgeführten Experimenten ist aufgefallen, dass die Rekonstruktionen, 
   \label{fig:blur_explained}
 \end{figure}
 
-Eine Erklärung für dieses Phänomen bei VAEs liefern \cite{Plumerault2020} (siehe Abb. \ref{fig:blur_explained}). Betrachtet wird eine Kante im Eingabebild $i$ und der Latent-Vektor $z$, welcher die Position $x_{front}$ der Kante beschreibt. Wenn nun 
+Eine Erklärung für dieses Phänomen bei VAEs liefern \cite{Plumerault2020} (siehe Abb. \ref{fig:blur_explained}). Betrachtet wird eine Kante im Eingabebild $i$ und der Latent-Vektor $z$, welcher die Position $x_{front}$ der Kante beschreibt. Wenn nun
 \[
 Q_\phi(z \vert i) = \cN(x_{front}, \sigma)
 \]

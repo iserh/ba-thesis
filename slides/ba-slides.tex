@@ -19,7 +19,7 @@
 \pgfplotsset{every axis/.append style={very thick}}
 \usefonttheme[onlymath]{serif}
 
-\renewcommand*{\nameyeardelim}{\addcomma\space} 
+\renewcommand*{\nameyeardelim}{\addcomma\space}
 \usepgfplotslibrary{dateplot}
 \usemintedstyle{trac}
 
@@ -96,7 +96,7 @@
   \vfill
   außerdem
   \begin{equation}
-    \beta_{norm} = \beta \cdot \frac{d}{N}, 
+    \beta_{norm} = \beta \cdot \frac{d}{N},
   \end{equation}
   mit Latent-Space Dimension $d$
   \vfill
@@ -363,8 +363,8 @@ $\Rightarrow$
     height = 4cm,
     symbolic x coords={5,10,20,30,50,100},
     xtick={5,10,20,30,50,100},
-    xlabel={\# Beispiele pro Klasse}, 
-    ylabel={$\Delta$ F-Score}, 
+    xlabel={\# Beispiele pro Klasse},
+    ylabel={$\Delta$ F-Score},
     grid,
     legend pos=south west,
   ]
@@ -450,19 +450,19 @@ Latent-Space Dimension $d = 50$, $\beta = 0.5$, keine $\beta$-Normalisierung\\
   height=5cm,
   symbolic x coords={2,3,4,5,10,20,30,50,100,200,500,1000,2000},
   xtick={2,3,4,5,10,20,30,50,100,200,500,1000,2000},
-  xlabel={Generierte Beispiele pro Klasse}, 
-  ylabel={F1 Score}, 
+  xlabel={Generierte Beispiele pro Klasse},
+  ylabel={F1 Score},
   grid,
   legend pos=south east,
 ]
 
-\addplot[blue, no marks, solid] table[col sep=comma, x=n_generated, y=baseline]{data/evaluation/MNIST-GEN*-5.csv};
+\addplot[blue, no marks, solid] table[col sep=comma, x=n_generated, y=baseline]{data/evaluation/MNIST-GEN-5.csv};
 \addlegendentry{Baseline}
 
-\addplot[red, no marks, solid] table[col sep=comma, x=n_generated, y=interpolation_noise]{data/evaluation/MNIST-GEN*-5.csv};
+\addplot[red, no marks, solid] table[col sep=comma, x=n_generated, y=interpolation_noise]{data/evaluation/MNIST-GEN-5.csv};
 \addlegendentry{Interpolation + Noise}
 
-\addplot[violet, no marks, solid] table[col sep=comma, x=n_generated, y=multi_vae]{data/evaluation/MNIST-GEN*-5.csv};
+\addplot[violet, no marks, solid] table[col sep=comma, x=n_generated, y=multi_vae]{data/evaluation/MNIST-GEN-5.csv};
 \addlegendentry{Multi-VAE}
 
 \end{axis}
